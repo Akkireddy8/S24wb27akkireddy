@@ -1,8 +1,6 @@
 extends layout
-
 block content
   h1= title
-  
   div.container-fluid
     div.row
       -
@@ -10,8 +8,7 @@ block content
           { gift_type: 'Toy', gift_size: 'Small', gift_price: 10 },
           { gift_type: 'Book', gift_size: 'Medium', gift_price: 15 },
           { gift_type: 'Electronics', gift_size: 'Large', gift_price: 50 }
-        ]
-        
+        ]      
       each gift,index in results
         .col-sm-2 
           div.col-sm-2(onclick=`buy(${index})`)
@@ -21,7 +18,6 @@ block content
             p Price: $#{gift.gift_price.toFixed(2)}
 
   a(href="/") Back to index
-
   script. 
     function buy(index) {
       alert(`You purchased item ${index}`);
